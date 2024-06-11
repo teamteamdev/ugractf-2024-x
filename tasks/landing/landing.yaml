@@ -1,0 +1,13 @@
+category: none
+points: 0
+title: landing
+author: purplesyringa
+description: none
+daemon:
+  exec: kyzylborda-docker-compose-daemon
+  cwd: .
+  socket: ./app.sock
+  socket_type: http
+  http_hostnames:
+  - teemoorka.network.
+hidden: true

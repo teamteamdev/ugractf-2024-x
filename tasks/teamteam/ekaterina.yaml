@@ -1,0 +1,10 @@
+category: kalan
+points: 1
+title: Пароль
+sort_key: k08
+author: teamteam
+description: >
+  <p>Узнайте пароль Екатерины.</p>
+flags:
+  - "fjjjjfds"
+depends_on: vpn

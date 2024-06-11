@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Лояльность в Тимурке</title>
+	<style>
+		html {
+			height: 100%;
+		}
+
+		body {
+			font-family: monospace;
+
+			display: flex;
+			height: 100%;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		form {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+
+			> * {
+				margin: .5em;
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1>Ваш уровень лояльности — {{ nya }}</h1>
+	<p>Увеличить уровень лояльности легко!</p>
+	<form method="POST" action="/vote">
+		<label for="whom">Сослать донос на</label>
+		<select name="whom">
+			{% for login in logins %}
+				<option>{{ login }}</option>
+			{% endfor %}
+		</select>
+		<button>
+			<img width=24 src="https://yaso.su/J1FRTOrw" alt="submit"></img>
+		</button>
+	</form>
+</body>
+</html>

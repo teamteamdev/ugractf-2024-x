@@ -1,0 +1,5 @@
+services:
+  sshd:
+    build: sshd
+    volumes:
+    - ${TMPDIR}:/tmp

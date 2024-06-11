@@ -1,0 +1,8 @@
+{
+  "bot_token": "1234567890:QWERTYUIOPasdfghjklZXCVBN-M12345678",
+  "db_uri": "/data/moderator.sqlite3",
+  "root_url": "https://moderator.teemoorka.network",
+  "bind": ":8080",
+  "vote_chat_id": -1002190367036,
+  "moderator_chat_id": -1002190507001
+}

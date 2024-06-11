@@ -1,0 +1,6 @@
+services:
+  web:
+    build: web
+    volumes:
+    - ./web:/app:ro
+    - ${TMPDIR}:/tmp

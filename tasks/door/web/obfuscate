@@ -1,0 +1,1 @@
+javascript-obfuscator script.js --control-flow-flattening true --dead-code-injection true --debug-protection false --numbers-to-expressions true --rename-globals true --simplify true --unicode-escape-sequence true -o static/script.js

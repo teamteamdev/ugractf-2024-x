@@ -1,0 +1,85 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            56:a8:32:be:28:e3:d9:0c:73:0c:4f:44:33:65:62:ec
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=Teemoorka Network
+        Validity
+            Not Before: Jun 16 11:52:13 2024 GMT
+            Not After : Sep 19 11:52:13 2026 GMT
+        Subject: CN=purplesyringa
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:ac:f1:73:8f:55:5c:b2:5f:90:9e:e6:f2:30:1b:
+                    cd:8d:69:9e:4e:28:6c:44:80:c3:9d:93:ef:c6:2f:
+                    7b:cc:bb:8d:32:37:a1:e6:0c:45:da:a5:20:a8:b1:
+                    4d:a5:ca:df:aa:36:b1:a7:8d:f3:dd:17:b4:4d:12:
+                    50:2d:5e:8d:a5:a7:0d:a0:07:7a:c5:05:38:9c:db:
+                    ca:29:4a:2d:77:bb:c6:a9:30:a5:69:a1:58:2f:de:
+                    4d:06:16:c5:be:9c:fd:e4:c8:66:d9:01:20:59:03:
+                    65:ed:d1:a6:a5:35:c9:be:7d:8f:d2:7a:26:d7:52:
+                    d1:e7:2c:58:59:06:3b:61:84:d4:c4:9f:0b:db:03:
+                    4e:ed:f6:fe:12:70:ab:7a:5b:64:42:68:e1:bc:dc:
+                    75:5b:16:b9:5f:d9:ba:46:05:53:70:66:a5:72:de:
+                    af:15:f1:8c:59:66:fb:23:0e:b5:70:84:b2:18:ac:
+                    e3:6e:3b:fb:56:76:92:a9:05:06:87:ed:7a:6b:3a:
+                    25:4d:0e:5b:a4:fc:4f:73:a4:b6:c5:c7:1c:66:c6:
+                    3d:29:40:96:88:af:80:4f:d5:bc:b4:54:bd:c7:90:
+                    10:27:b0:1b:36:9b:ee:c4:ab:c0:c1:4c:2a:f8:85:
+                    33:30:61:2b:70:18:84:4d:81:c5:38:b2:95:0d:f6:
+                    19:87
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                21:18:1F:9F:BE:6C:7C:2D:C3:7E:8B:7A:E9:EE:3B:28:76:FA:E0:54
+            X509v3 Authority Key Identifier: 
+                keyid:20:51:74:8D:0B:12:C0:83:71:DA:41:4B:28:7E:76:62:0B:9B:06:A9
+                DirName:/CN=Teemoorka Network
+                serial:24:63:E8:48:F2:32:CB:F5:C6:7F:61:12:E4:B2:0F:65:75:85:45:41
+
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+            X509v3 Key Usage: 
+                Digital Signature
+    Signature Algorithm: sha256WithRSAEncryption
+         6d:d9:82:c5:b1:31:1c:42:ec:23:a8:60:3c:8c:19:b9:82:88:
+         78:34:35:cd:2c:40:25:91:fb:27:9f:86:41:c3:ec:dd:ee:1b:
+         dc:f8:ed:2c:4e:36:49:fe:c5:c7:9f:2a:9a:09:ab:a5:c5:e5:
+         49:ec:86:79:1f:da:86:fa:17:26:e7:7a:26:85:15:9c:c2:96:
+         36:37:85:90:dc:7d:46:62:f3:a7:5a:5a:90:8b:3e:56:1d:42:
+         2b:1e:80:dd:5d:06:9d:0e:1b:32:fc:9c:85:ad:50:4f:fb:68:
+         d7:54:e1:c1:5d:09:80:40:e2:f1:06:b0:9a:5e:2e:5d:af:a8:
+         de:56:20:2c:7d:08:e6:89:e7:26:7d:4c:cb:34:49:59:c3:42:
+         26:1c:c4:aa:dc:76:eb:95:94:7b:dc:b2:41:95:b9:5c:8f:23:
+         5f:d5:26:1f:3a:59:69:05:9b:a2:f1:ac:4d:cc:c4:e4:02:43:
+         0f:c4:82:a1:b6:9b:ee:8c:59:21:2f:52:f0:90:78:1e:bc:72:
+         e8:48:a9:36:2d:bc:99:13:5c:80:75:2f:68:39:71:e4:44:8c:
+         c1:8b:b2:13:1e:f6:63:e8:04:f3:af:52:6e:96:ae:4a:6d:b0:
+         6c:c8:d2:24:5c:d8:4b:c8:5a:52:e6:86:55:ce:a6:fc:d4:be:
+         44:22:ac:f6
+-----BEGIN CERTIFICATE-----
+MIIDZzCCAk+gAwIBAgIQVqgyvijj2QxzDE9EM2Vi7DANBgkqhkiG9w0BAQsFADAc
+MRowGAYDVQQDDBFUZWVtb29ya2EgTmV0d29yazAeFw0yNDA2MTYxMTUyMTNaFw0y
+NjA5MTkxMTUyMTNaMBgxFjAUBgNVBAMMDXB1cnBsZXN5cmluZ2EwggEiMA0GCSqG
+SIb3DQEBAQUAA4IBDwAwggEKAoIBAQCs8XOPVVyyX5Ce5vIwG82NaZ5OKGxEgMOd
+k+/GL3vMu40yN6HmDEXapSCosU2lyt+qNrGnjfPdF7RNElAtXo2lpw2gB3rFBTic
+28opSi13u8apMKVpoVgv3k0GFsW+nP3kyGbZASBZA2Xt0aalNcm+fY/SeibXUtHn
+LFhZBjthhNTEnwvbA07t9v4ScKt6W2RCaOG83HVbFrlf2bpGBVNwZqVy3q8V8YxZ
+ZvsjDrVwhLIYrONuO/tWdpKpBQaH7XprOiVNDluk/E9zpLbFxxxmxj0pQJaIr4BP
+1by0VL3HkBAnsBs2m+7Eq8DBTCr4hTMwYStwGIRNgcU4spUN9hmHAgMBAAGjgagw
+gaUwCQYDVR0TBAIwADAdBgNVHQ4EFgQUIRgfn75sfC3Dfot66e47KHb64FQwVwYD
+VR0jBFAwToAUIFF0jQsSwINx2kFLKH52YgubBqmhIKQeMBwxGjAYBgNVBAMMEVRl
+ZW1vb3JrYSBOZXR3b3JrghQkY+hI8jLL9cZ/YRLksg9ldYVFQTATBgNVHSUEDDAK
+BggrBgEFBQcDAjALBgNVHQ8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAG3ZgsWx
+MRxC7COoYDyMGbmCiHg0Nc0sQCWR+yefhkHD7N3uG9z47SxONkn+xcefKpoJq6XF
+5Unshnkf2ob6FybneiaFFZzCljY3hZDcfUZi86daWpCLPlYdQisegN1dBp0OGzL8
+nIWtUE/7aNdU4cFdCYBA4vEGsJpeLl2vqN5WICx9COaJ5yZ9TMs0SVnDQiYcxKrc
+duuVlHvcskGVuVyPI1/VJh86WWkFm6LxrE3MxOQCQw/EgqG2m+6MWSEvUvCQeB68
+cuhIqTYtvJkTXIB1L2g5ceREjMGLshMe9mPoBPOvUm6WrkptsGzI0iRc2EvIWlLm
+hlXOpvzUvkQirPY=
+-----END CERTIFICATE-----

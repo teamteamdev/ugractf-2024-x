@@ -1,0 +1,25 @@
+services:
+  samba:
+    image: ghcr.io/servercontainers/samba
+    depends_on:
+    - vpn
+    network_mode: service:vpn
+    environment:
+      SAMBA_VOLUME_CONFIG_teemoorka: |
+        [Teemoorka]
+        path = /shares/teemoorka
+        guest ok = yes
+        browseable = yes
+    volumes:
+    - ./share:/shares/teemoorka
+
+  vpn:
+    image: dperson/openvpn-client
+    hostname: teemoorka
+    cap_add:
+    - net_admin
+    security_opt:
+    - label:disable
+    volumes:
+    - /dev/net:/dev/net:z
+    - ./sambaserver.ovpn:/vpn/sambaserver.ovpn:ro

@@ -1,0 +1,62 @@
+services:
+  katya-laptop:
+    extends:
+      file: templates.yml
+      service: laptop
+    environment:
+      IP: 10.13.13.210
+      NAME: KATYA-WORK
+
+  vladimir-laptop:
+    extends:
+      file: templates.yml
+      service: laptop
+    environment:
+      IP: 10.13.10.123
+      NAME: Vladimir's Computer
+
+  serj-laptop:
+    extends:
+      file: templates.yml
+      service: laptop
+    environment:
+      IP: 10.13.15.44
+      NAME: serejaaaaaaa
+
+  kalan-laptop:
+    extends:
+      file: templates.yml
+      service: laptop
+    environment:
+      IP: 10.13.8.103
+      NAME: Kalan's Thinkpad
+
+  marina-laptop:
+    extends:
+      file: templates.yml
+      service: laptop
+    build:
+      target: marina
+    environment:
+      IP: 10.13.4.86
+      NAME: Marina-PC-XFCE410Pro
+
+  router:
+    build: router
+    network_mode: service:vpn
+    cap_add:
+    - net_admin
+    environment:
+      QUART_SECRET_KEY: 1G58kggI3Xy9hkeIdnbYR3TMDYy2NZOZ
+    volumes:
+    - ./router/app:/app:ro
+
+  vpn:
+    image: dperson/openvpn-client
+    cap_add:
+    - net_admin
+    security_opt:
+    - label:disable
+    volumes:
+    - /dev/net:/dev/net:z
+    - ./router.ovpn:/vpn/router.ovpn:ro

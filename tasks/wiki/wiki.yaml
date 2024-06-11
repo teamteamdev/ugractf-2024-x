@@ -1,0 +1,13 @@
+category: none
+points: 0
+title: wiki
+author: sylfn
+description: none
+daemon:
+  exec: kyzylborda-docker-compose-daemon
+  cwd: .
+  socket: ./app.sock
+  socket_type: http
+  http_hostnames:
+  - internal-wiki.teemoorka.network.
+hidden: true

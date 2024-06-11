@@ -1,0 +1,14 @@
+category: kalan
+points: 1
+title: Офис
+sort_key: k04
+author: teamteam
+description: >
+  <p>
+    У «Тимурки», судя по всему, недавно открылся офис в Москве. Найдите и его.
+  </p>
+  <p>
+    Укажите адрес в формате: <em>улица номер дома</em>, например: <em>Ленина 14</em>.
+flags:
+  - "Электродная 11"
+depends_on: task

@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  adminbot:
+    build: bot
+    volumes:
+    - ${TMPDIR}:/tmp
+    - x-moderator-db:/data
+  proxy:
+    build: proxy
+    volumes:
+    - ${TMPDIR}:/tmp
+
+volumes:
+  x-moderator-db:
+    external: true

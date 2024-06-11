@@ -1,0 +1,32 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 15vh;
+  height: 100%;
+  background-color: #57afe6;
+  font-size: 10vh;
+}
+
+.title {
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+.inprogress {
+  font-size: 1em;
+  color: #b2d5eb;
+}
+
+.title, .inprogress {
+  font-weight: 400;
+  margin: 0;
+}
+
+.jobs {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  color: #ffffff;
+  font-size: 2.5vh;
+}

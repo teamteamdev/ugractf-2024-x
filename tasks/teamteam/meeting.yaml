@@ -1,0 +1,12 @@
+category: kalan
+points: 1
+title: Важная встреча
+sort_key: k10
+author: teamteam
+description: >
+  <p>
+    Секретарь организовала некую важную онлайн-встречу. Найдите номер этой встречи — одно число.
+  </p>
+flags:
+  - "81713543364"
+depends_on: hostname

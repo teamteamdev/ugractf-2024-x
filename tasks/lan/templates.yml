@@ -1,0 +1,11 @@
+services:
+  laptop:
+    build:
+      context: laptop
+      target: base
+    security_opt:
+    - apparmor:unconfined
+    network_mode: service:vpn
+    cap_add:
+    - sys_admin
+    - net_admin

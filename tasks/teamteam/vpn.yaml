@@ -1,0 +1,12 @@
+category: kalan
+points: 1
+title: VPN
+sort_key: k07
+author: teamteam
+description: >
+  <p>
+    Укажите адрес корпоративного VPN-сервера компании.
+  </p>
+flags:
+  - "vpn-scale-process-gush-identity.teemoorka.network"
+depends_on: admin

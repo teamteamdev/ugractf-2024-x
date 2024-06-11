@@ -1,0 +1,13 @@
+category: none
+points: 0
+title: moderator
+author: udn_t
+description: none
+daemon:
+  exec: kyzylborda-docker-compose-daemon
+  cwd: .
+  socket: ./moderator.sock
+  socket_type: http
+  http_hostnames:
+    - moderator.teemoorka.network.
+hidden: true

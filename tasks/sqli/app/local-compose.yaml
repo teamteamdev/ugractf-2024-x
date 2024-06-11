@@ -1,0 +1,7 @@
+services:
+  sqli:
+    build: .
+    ports:
+    - 1984:80
+    volumes:
+    - .:/app:ro

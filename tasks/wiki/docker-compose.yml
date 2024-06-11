@@ -1,0 +1,8 @@
+services:
+  mediawiki:
+    build: mediawiki
+    restart: always
+  uds-export:
+    build: uds-export
+    volumes:
+      - ${TMPDIR}:/tmp

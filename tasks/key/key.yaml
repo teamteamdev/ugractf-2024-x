@@ -1,0 +1,12 @@
+category: none
+points: 0
+title: key
+author: purplesyringa
+description: none
+daemon:
+  exec: kyzylborda-docker-compose-daemon
+  cwd: .
+  socket: ./app.sock
+  socket_type: tcp
+  tcp_port: 5890
+hidden: true

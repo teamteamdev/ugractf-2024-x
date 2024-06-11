@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Teemoorka Router | Console</title>
+	<style type="text/css">
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+
+		body {
+			display: flex;
+			font-family: sans-serif;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		nav {
+			height: 100%;
+			background-color: #172a4c;
+		}
+
+		ol {
+			padding: 0;
+			margin: 1em 1.5em;
+		}
+
+		li {
+			list-style-type: none;
+			font-size: 2em;
+			text-align: center;
+			color: #369cd6;
+		}
+		li a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		main {
+			flex: 1 1 0;
+			background-color: #efefef;
+			padding: 0.75em;
+		}
+
+		.block {
+			display: inline-flex;
+			flex-direction: column;
+			box-shadow: 0 0 0.25em #808080;
+			background-color: #ffffff;
+			margin: 0.75em;
+			min-width: 40em;
+		}
+
+		h2 {
+			align-self: flex-start;
+			margin: 1rem 1.5rem;
+			color: #144068;
+			font-weight: normal;
+			border-bottom: 0.125rem solid;
+		}
+
+		.hr {
+			margin: 0 1.5rem;
+			height: 0.0625rem;
+			background-color: #1297d7;
+		}
+
+		table {
+			margin: 1rem;
+			border-collapse: collapse;
+		}
+
+		tr {
+			height: 2em;
+		}
+
+		th, td {
+			text-align: left;
+			padding: 0 0.5em;
+		}
+
+		.spoiler {
+			background-color: #808080;
+			color: #808080;
+			transition: all 0.1s;
+		}
+		.spoiler:hover {
+			background-color: #ffffff;
+			color: #000000;
+		}
+
+		button {
+			cursor: pointer;
+			background: none;
+			border: none;
+			padding: 0;
+			font: inherit;
+			color: #ff0000;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<ol>
+			<li><a href="/console">🛈</a></li>
+			<li><a href="/console/configuration">⚙</a></li>
+		</ol>
+	</nav>
+
+	<main>
+		{% if page == "status" %}
+			<div class="block">
+				<h2>Internet</h2>
+				<div class="hr"></div>
+				<table>
+					<tr>
+						<th>VPN address</th><td>vpn-scale-process-gush-identity.teemoorka.network</td>
+					</tr>
+					<tr>
+						<th>External IP</th><td>{{ external_ip }}</td>
+					</tr>
+					<tr>
+						<th>Ping</th><td>{{ ping_ms }} ms</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="block">
+				<h2>Wi-Fi Hotspot</h2>
+				<div class="hr"></div>
+				<table>
+					<tr>
+						<th>SSID</th><td>Teemoorka Office</td>
+					</tr>
+					<tr>
+						<th>Encryption</th><td>WPA2 PSK</td>
+					</tr>
+					<tr>
+						<th>Password</th><td><span class="spoiler">t33m00rk47h3b3s7</span></td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="block">
+				<h2>DHCP</h2>
+				<div class="hr"></div>
+				<table>
+					{% for ip, name in clients|dictsort %}
+						<tr>
+							<th>{{ ip }}</th><td>{{ name }}</td>
+						</tr>
+					{% endfor %}
+				</table>
+			</div>
+
+			<div class="block">
+				<h2>LAN</h2>
+				<div class="hr"></div>
+				<table>
+					<tr>
+						<th>Subnet</th><td>10.13.0.0/20</td>
+					</tr>
+					<tr>
+						<th>Router IP</th><td>10.13.0.1</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="block">
+				<h2>System</h2>
+				<div class="hr"></div>
+				<table>
+					<tr>
+						<th>Uptime</th><td>{{ uptime_min }} min</td>
+					</tr>
+					<tr>
+						<th>Flux capacitor</th><td>Disabled</td>
+					</tr>
+					<tr>
+						<th>Torrent seedbox</th><td>Running</td>
+					</tr>
+				</table>
+			</div>
+		{% endif %}
+
+		{% if page == "configuration" %}
+			<div class="block">
+				<h2>TCP forwarding</h2>
+				<div class="hr"></div>
+				<table>
+					<tr>
+						<th>External address</th>
+						<th>Internal address</th>
+						<th></th>
+					</tr>
+					{% for external_port, device_ip, internal_port in forwarded_ports %}
+						<tr>
+							<td>0.0.0.0:{{ external_port }}</td>
+							<td>{{ device_ip }}:{{ internal_port }}</td>
+							<td>
+								<form method="POST" action="/console/delete-tcp-forwarding">
+									<input type="hidden" name="external_port" value="{{ external_port }}">
+									<input type="hidden" name="device_ip" value="{{ device_ip }}">
+									<input type="hidden" name="internal_port" value="{{ internal_port }}">
+									<button class="delete">❌</button>
+								</form>
+							</td>
+						</tr>
+					{% endfor %}
+					<form method="POST" action="/console/add-tcp-forwarding">
+						<tr>
+							<td>0.0.0.0:<input type="number" name="external_port" min="1" max="65535"></td>
+							<td>
+								<select name="device_ip">
+									{% for ip in clients %}
+										<option>{{ ip }}</option>
+									{% endfor %}
+								</select>:<input type="number" name="internal_port" min="1" max="65535">
+							</td>
+							<td>
+								<button class="add">➕</button>
+							</td>
+						</tr>
+					</form>
+				</table>
+			</div>
+		{% endif %}
+	</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+category: kalan
+points: 1
+title: Название компьютера
+sort_key: k09
+author: teamteam
+description: >
+  <p>
+    Мы заметили с утра секретаря директора: она заходила в офис. Узнайте имя хоста её рабочего компьютера.
+  </p>
+flags:
+  - "Marina-PC-XFCE410Pro"
+depends_on: vpn

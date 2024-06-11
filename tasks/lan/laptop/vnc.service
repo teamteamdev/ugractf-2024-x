@@ -1,0 +1,15 @@
+[Unit]
+Description=Remote desktop service (VNC)
+After=syslog.target network.target
+
+[Service]
+Type=forking
+User=marina
+ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill :1 || true'
+ExecStart=/usr/bin/vncserver :1 -geometry 1800x1000 -depth 16 -alwaysshared -rfbauth /home/marina/.vnc/passwd
+ExecStop=/usr/bin/vncserver -kill :1
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,89 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            72:fb:9a:e7:8d:aa:a1:9e:11:97:8f:22:73:5d:8f:24
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=Teemoorka Network
+        Validity
+            Not Before: Jun 16 08:07:02 2024 GMT
+            Not After : Sep 19 08:07:02 2026 GMT
+        Subject: CN=vpn-scale-process-gush-identity.teemoorka.network
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:c9:52:1e:34:fc:d7:61:dc:dd:fb:34:ff:b2:38:
+                    fb:cc:e0:18:d9:95:12:b1:51:12:01:74:a2:83:ad:
+                    a0:8d:d7:23:58:b7:36:af:33:80:96:94:24:62:fb:
+                    fe:7e:93:99:34:36:28:02:3f:65:c5:b7:09:21:70:
+                    4a:00:6a:5c:61:c2:00:ba:17:93:eb:b3:00:a8:bc:
+                    62:4e:c5:45:0c:c0:1d:27:00:2c:61:ed:f2:ab:c5:
+                    12:b3:d2:78:a4:da:e7:70:e7:05:91:59:7e:b5:3d:
+                    84:83:7a:11:34:dc:aa:78:c7:cd:57:49:f7:4e:5c:
+                    58:79:ca:24:40:41:26:1c:21:3e:51:f6:b8:75:43:
+                    1b:6e:9e:42:88:4f:1c:d6:13:dc:85:cd:ad:78:f1:
+                    94:f7:41:f0:7f:40:98:7a:66:7d:ca:53:63:51:10:
+                    fc:38:86:3e:9e:09:47:50:1a:ae:5a:53:3f:c7:94:
+                    40:cd:55:dc:f4:33:49:b1:0f:74:ca:17:01:01:4d:
+                    93:77:f7:3c:82:b2:ab:87:60:31:96:07:52:ad:3c:
+                    08:84:72:1e:88:43:cc:f5:93:8a:e8:af:5a:fb:0a:
+                    80:28:80:23:7b:0d:90:5e:07:45:6b:0b:42:05:8e:
+                    ba:b1:fe:5a:9c:9c:02:71:86:72:84:c2:6a:a9:3d:
+                    73:bf
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                77:7D:5E:6F:97:05:94:26:51:DA:F1:3A:4E:1C:60:81:BD:F0:2F:BB
+            X509v3 Authority Key Identifier: 
+                keyid:20:51:74:8D:0B:12:C0:83:71:DA:41:4B:28:7E:76:62:0B:9B:06:A9
+                DirName:/CN=Teemoorka Network
+                serial:24:63:E8:48:F2:32:CB:F5:C6:7F:61:12:E4:B2:0F:65:75:85:45:41
+
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+            X509v3 Subject Alternative Name: 
+                DNS:vpn-scale-process-gush-identity.teemoorka.network
+    Signature Algorithm: sha256WithRSAEncryption
+         7f:98:eb:53:9a:57:78:6f:70:18:6d:5b:5d:35:7f:7e:9c:05:
+         34:d3:1c:4a:34:e6:d7:77:3f:23:cc:94:e2:35:3c:b9:1b:22:
+         58:ce:cd:94:a5:79:af:d6:81:23:d4:a7:c4:b1:ce:41:03:1d:
+         d5:48:bc:6f:ea:42:aa:27:1a:6c:0f:16:80:3b:77:0e:be:b7:
+         46:93:46:79:58:ae:dc:b0:a1:10:ce:7b:4d:02:53:9d:9a:23:
+         d3:40:33:b6:24:3c:c8:74:34:30:b0:bd:1d:e3:96:4a:a1:bf:
+         2d:30:99:d0:7e:84:4c:11:24:a0:40:0b:cb:b7:c1:bb:e9:7e:
+         a8:ca:1b:ab:b9:f5:5c:fa:84:ba:3c:1c:40:ce:83:b6:10:78:
+         36:3c:02:18:e9:fa:2c:62:1b:97:bb:7b:3f:ff:7b:a4:31:72:
+         c7:0e:6b:62:a7:63:d7:40:31:aa:66:66:f3:f1:f8:33:f6:07:
+         e6:eb:ac:6c:48:92:61:fc:9c:2b:e3:de:eb:a3:0a:19:fa:8a:
+         a2:19:e6:04:a0:b0:b4:9f:8f:c5:9f:ba:94:b0:0e:a5:f3:e6:
+         e9:55:68:fa:01:13:e9:a1:83:22:a0:a8:2a:c2:0c:cf:1b:34:
+         2b:82:98:95:e4:b8:7f:6a:9f:a9:d5:21:98:c4:6e:50:31:aa:
+         d4:d0:b0:21
+-----BEGIN CERTIFICATE-----
+MIIDyTCCArGgAwIBAgIQcvua542qoZ4Rl48ic12PJDANBgkqhkiG9w0BAQsFADAc
+MRowGAYDVQQDDBFUZWVtb29ya2EgTmV0d29yazAeFw0yNDA2MTYwODA3MDJaFw0y
+NjA5MTkwODA3MDJaMDwxOjA4BgNVBAMMMXZwbi1zY2FsZS1wcm9jZXNzLWd1c2gt
+aWRlbnRpdHkudGVlbW9vcmthLm5ldHdvcmswggEiMA0GCSqGSIb3DQEBAQUAA4IB
+DwAwggEKAoIBAQDJUh40/Ndh3N37NP+yOPvM4BjZlRKxURIBdKKDraCN1yNYtzav
+M4CWlCRi+/5+k5k0NigCP2XFtwkhcEoAalxhwgC6F5PrswCovGJOxUUMwB0nACxh
+7fKrxRKz0nik2udw5wWRWX61PYSDehE03Kp4x81XSfdOXFh5yiRAQSYcIT5R9rh1
+QxtunkKITxzWE9yFza148ZT3QfB/QJh6Zn3KU2NREPw4hj6eCUdQGq5aUz/HlEDN
+Vdz0M0mxD3TKFwEBTZN39zyCsquHYDGWB1KtPAiEch6IQ8z1k4ror1r7CoAogCN7
+DZBeB0VrC0IFjrqx/lqcnAJxhnKEwmqpPXO/AgMBAAGjgeYwgeMwCQYDVR0TBAIw
+ADAdBgNVHQ4EFgQUd31eb5cFlCZR2vE6Thxggb3wL7swVwYDVR0jBFAwToAUIFF0
+jQsSwINx2kFLKH52YgubBqmhIKQeMBwxGjAYBgNVBAMMEVRlZW1vb3JrYSBOZXR3
+b3JrghQkY+hI8jLL9cZ/YRLksg9ldYVFQTATBgNVHSUEDDAKBggrBgEFBQcDATAL
+BgNVHQ8EBAMCBaAwPAYDVR0RBDUwM4IxdnBuLXNjYWxlLXByb2Nlc3MtZ3VzaC1p
+ZGVudGl0eS50ZWVtb29ya2EubmV0d29yazANBgkqhkiG9w0BAQsFAAOCAQEAf5jr
+U5pXeG9wGG1bXTV/fpwFNNMcSjTm13c/I8yU4jU8uRsiWM7NlKV5r9aBI9SnxLHO
+QQMd1Ui8b+pCqicabA8WgDt3Dr63RpNGeViu3LChEM57TQJTnZoj00AztiQ8yHQ0
+MLC9HeOWSqG/LTCZ0H6ETBEkoEALy7fBu+l+qMobq7n1XPqEujwcQM6DthB4NjwC
+GOn6LGIbl7t7P/97pDFyxw5rYqdj10AxqmZm8/H4M/YH5uusbEiSYfycK+Pe66MK
+GfqKohnmBKCwtJ+PxZ+6lLAOpfPm6VVo+gET6aGDIqCoKsIMzxs0K4KYleS4f2qf
+qdUhmMRuUDGq1NCwIQ==
+-----END CERTIFICATE-----

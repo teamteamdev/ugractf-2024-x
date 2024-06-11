@@ -1,0 +1,1 @@
+echo password | docker compose run --rm --no-TTY openvpn easyrsa build-client-full "$1" nopass

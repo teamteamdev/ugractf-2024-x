@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Т-естовое</title>
+	<style type="text/css">
+		body {
+			font-family: sans-serif;
+			font-size: 16px;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		form {
+			display: flex;
+			justify-content: center;
+		}
+		form > * {
+			margin-right: 1rem;
+		}
+
+		p {
+			text-align: center;
+			margin: 2rem 0;
+		}
+
+		.items {
+			display: flex;
+			justify-content: center;
+		}
+
+		.item {
+			width: 16rem;
+			height: 16rem;
+			background-position: center;
+			background-size: cover;
+			margin: 0 2rem;
+			text-decoration: none;
+		}
+
+		.description {
+			width: 100%;
+			height: 100%;
+			background-color: #0008;
+			color: #fff;
+			font-size: 2rem;
+			opacity: 0;
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+			padding-bottom: 2rem;
+			transition: opacity 0.2s;
+		}
+
+		.item:hover .description {
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<p>Имеются три точно никак не связанных объекта:</p>
+
+	<div class="items">
+		<a href="https://door-task-09fc26ba23.teemoorka.network/" class="item" style="background-image: url(/static/door.jpg)"><div class="description">Дверь</div></a>
+		<a href="https://lock-task-09fc26ba23.teemoorka.network/" class="item" style="background-image: url(/static/lock.jpg)"><div class="description">Замок</div></a>
+		<a href="/static/id_ed25519" class="item" style="background-image: url(/static/key.jpg)"><div class="description">Ключ</div></a>
+	</div>
+
+	<p>Ещё имеются ребусы, в каждом из которых загадано по натуральному числу:</p>
+
+	<div class="items">
+		<a href="/static/nonce.mov" class="item" style="background-image: url(/static/nonce.jpg)"><div class="description">nonce</div></a>
+		<a href="/static/k.txt" class="item" style="background-image: url(/static/k.jpg)"><div class="description">k</div></a>
+		<a href="/static/3021from2750.txt" class="item" style="background-image: url(/static/3021from2750.jpg)"><div class="description">3021from2750</div></a>
+	</div>
+
+	<p>Думайте. А когда придумаете, можете проверить флаг:</p>
+
+	<form action="/check-flag" method="POST">
+		<input type="text" name="flag" placeholder="Флаг">
+		<button>Апробировать</button>
+	</form>
+
+	{% if flag_status == "ok" %}
+		<p>Это правильный флаг!</p>
+	{% endif %}
+	{% if flag_status == "wrong" %}
+		<p>Это неправильный флаг.</p>
+	{% endif %}
+</body>
+</html>

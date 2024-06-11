@@ -1,0 +1,12 @@
+category: kalan
+points: 1
+title: Системный администратор
+sort_key: k06
+author: teamteam
+description: >
+  <p>
+    Как зовут системного администратора корпорации «Тимурка Нетворк»? Возможно, этот человек сможет помочь.
+  </p>
+flags:
+  - "Владимир"
+depends_on: office

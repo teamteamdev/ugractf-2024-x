@@ -1,0 +1,9 @@
+category: none
+points: 0
+title: lan
+author: purplesyringa
+description: none
+daemon:
+  exec: kyzylborda-docker-compose-daemon
+  cwd: .
+hidden: true

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Service for Querying your Loyalty Index</title>
+	<style>
+		html {
+			height: 100%;
+		}
+
+		body {
+			font-family: monospace;
+
+			display: flex;
+			height: 100%;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		form {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+
+			> * {
+				margin: .5em;
+			}
+		}
+
+		.error {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<h1>Узнай уровень лояльности к компании!</h1>
+	<form method="POST" action="/login">
+		<input type="text" name="username" placeholder="Логин">
+		<input type="password" name="password" placeholder="Пароль">
+		<button>Зайти</button>
+	</form>
+	{% if wrong_password %}<p class="error">Пароль неверен.</p>{% endif %}
+</body>
+</html>

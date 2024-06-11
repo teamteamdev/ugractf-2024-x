@@ -1,0 +1,22 @@
+services:
+  sqli:
+    build: app
+    depends_on:
+    - vpn
+    network_mode: service:vpn
+    volumes:
+    - ./app:/app:ro
+    - data:/nya
+
+  vpn:
+    image: dperson/openvpn-client
+    hostname: teemoorka
+    cap_add:
+    - net_admin
+    security_opt:
+    - label:disable
+    volumes:
+    - /dev/net:/dev/net:z
+    - ./sqli.ovpn:/vpn/sqli.ovpn:ro
+volumes:
+  data:

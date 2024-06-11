@@ -1,0 +1,9 @@
+category: none
+points: 0
+title: sqli
+author: sylfn
+description: none
+daemon:
+  exec: kyzylborda-docker-compose-daemon
+  cwd: .
+hidden: true

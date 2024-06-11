@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teemoorka Network: Опрос</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+      body {
+        background-color: var(--tg-theme-bg-color);
+        color: var(--tg-theme-text-color);
+
+        padding: 1em;
+        font-size: large;
+      }
+
+      h3 {
+        text-align: center;
+      }
+
+      ul {
+        padding-inline-start: 0;
+      }
+
+      label {
+        display: block;
+        background-color: var(--tg-theme-secondary-bg-color);
+        border-radius: 5px;
+        padding: 10px 20px;
+        border: 2px solid var(--tg-theme-secondary-bg-color);
+        margin-bottom: 5px;
+        cursor: pointer;
+      }
+
+      input {
+        display: none;
+        position: absolute;
+        width: 100%;
+        appearance: none;
+      }
+
+      input:checked + label {
+        color: var(--tg-theme-accent-text-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h3 id="header"></h3>
+      <ul id="answers"></ul>
+    </div>
+
+    <script>
+      const webapp = Telegram.WebApp;
+      webapp.MainButton.setText("Ответить").show();
+      const id = webapp.initDataUnsafe.user.id;
+
+      const qheader = document.getElementById("header");
+      const qanswers = document.getElementById("answers");
+      async function fetchQuestion() {
+        const resp = await fetch(`/question?id=${id}`);
+        const q = await resp.json();
+
+        qheader.innerText = q.text;
+        qanswers.innerHTML = "";
+        let i = 0;
+        for (const answer of q.answers) {
+          const div = document.createElement("div");
+          div.classList.add("answer");
+
+          const inp = document.createElement("input");
+          inp.type = "radio";
+          inp.name = "answer";
+          inp.value = answer;
+          inp.id = `a${i}`;
+          div.appendChild(inp);
+
+          const label = document.createElement("label");
+          label.htmlFor = inp.id;
+          label.innerText = answer;
+          div.appendChild(label);
+
+          qanswers.appendChild(div);
+          i++;
+        }
+      }
+
+      webapp.onEvent("mainButtonClicked", async () => {
+        const answer = document.querySelector("input:checked")?.value;
+        if (answer == null) {
+          webapp.showPopup({
+            message: "Нельзя ответить, не выбрав",
+          });
+          return;
+        }
+
+        webapp.MainButton.showProgress();
+        const resp = await fetch(`/submit?id=${id}`, {
+          body: answer,
+          method: "POST",
+        });
+        if (resp.status == 202) {
+          await fetchQuestion();
+          webapp.MainButton.hideProgress();
+        } else if (resp.status == 418) {
+          webapp.showPopup({
+            message: "Неверно, неверно!",
+          });
+          webapp.MainButton.hideProgress();
+        } else {
+          webapp.showPopup({
+            message: "Что-то произошло. Обращаться к пришельцам",
+            buttons: [
+              {
+                text: "Боюсь",
+              },
+              {
+                text: "Обращусь",
+              },
+            ],
+          });
+          webapp.MainButton.hideProgress();
+        }
+      });
+
+      fetchQuestion();
+    </script>
+  </body>
+</html>

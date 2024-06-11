@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Дверь</title>
+	<style>
+		body {
+			margin: 0;
+		}
+
+		#wall {
+			position: absolute;
+			width: 100%;
+			height: 80%;
+			background-image: linear-gradient(220deg, #c4c4c4, #a0a0a0);
+		}
+
+		#baseboard {
+			position: absolute;
+			top: 75%;
+			width: 100%;
+			height: 5%;
+			background-image: linear-gradient(to bottom, #aeaeae 0%, #ebebeb 15%, #d6d6d6 30%, #e8e8e8 35%, #d0d0d0 100%);
+		}
+
+		#floor {
+			position: absolute;
+			top: 80%;
+			width: 100%;
+			height: 20%;
+			background-image: linear-gradient(to bottom, #b1b1b1 0%, #dadada 10%, #d5d5d5 100%);
+		}
+
+		#frame {
+			position: absolute;
+			left: 42%;
+			top: 20%;
+			width: 16%;
+			height: 60%;
+			background-color: #e8e8e8;
+			box-shadow: 0 0 0 2px #b0b0b0, 0 0 20px 0 #949494, inset 0 0 40px 0 #c2c2c2;
+		}
+
+		#door {
+			position: absolute;
+			left: 43%;
+			top: 22%;
+			width: 14%;
+			height: 58%;
+			background-color: linear-gradient(to bottom, #ececec, #d3d3d3);
+			box-shadow: inset 0 0 2px #202020, inset 0 0 10px 0 #b0b0b0, inset 0 0 20px 0 #e0e0e0;
+		}
+
+		#lock {
+			position: absolute;
+			left: 44%;
+			top: 50%;
+			width: 1%;
+			height: 8%;
+			border-radius: 0.5vw;
+			background-image: linear-gradient(to bottom, #b9b9b9 0%, #cccccc 50%, #999999 100%);
+			box-shadow: 0 0 2px 2px #939393;
+		}
+
+		#handle {
+			position: absolute;
+			left: 44.4%;
+			top: 52%;
+			width: 4%;
+			height: 1.5%;
+			background-image: linear-gradient(to right, #b2b2b2, #dadada, #8e8e8e);
+			outline: 2px solid #aaaaaa;
+			border-radius: 0.5vh;
+			transform: perspective(10vw) rotate(0deg) rotateY(40deg);
+			transform-origin: 0.4vw 0.75vh;
+		}
+	</style>
+</head>
+<body>
+	<div id="wall"></div>
+	<div id="baseboard"></div>
+	<div id="floor"></div>
+	<div id="frame"></div>
+	<div id="door"></div>
+	<div id="lock"></div>
+	<div id="handle"></div>
+
+	<script src="/static/script.js?v=5"></script>
+</body>
+</html>

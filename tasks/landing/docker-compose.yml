@@ -1,0 +1,7 @@
+services:
+  web:
+    build: web
+  uds-export:
+    build: uds-export
+    volumes:
+    - ${TMPDIR}:/tmp

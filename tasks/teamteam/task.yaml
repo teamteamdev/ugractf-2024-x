@@ -1,0 +1,11 @@
+category: kalan
+points: 1
+title: Тестовое задание
+sort_key: k03
+author: teamteam
+description: >
+  <p>Интересная компания… Попробовали узнать, что там и как.</p>
+  <p>Наши источники сообщают, что Калан и в «Тимурке» делает таски. Сообщите нам домен компании, на котором опубликованы таски от Калана.</p>
+flags:
+  - "test-assignment-09fc26ba23.teemoorka.network"
+depends_on: company

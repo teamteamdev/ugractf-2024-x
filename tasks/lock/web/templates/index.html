@@ -1,0 +1,162 @@
+<meta name="robots" content="noindex, nofollow">
+<style>
+	html {
+		background-color: #202020;
+	}
+
+	body {
+		margin: 0;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.text {
+		position: absolute;
+		left: 20px;
+		top: 20px;
+		font-family: sans-serif;
+		font-size: 20px;
+		color: white;
+	}
+
+	small {
+		font-size: 15px;
+	}
+	.note small {
+		margin-top: 120px;
+	}
+
+	.note {
+		display: inline-flex;
+		width: 50px;
+		height: 200px;
+		background-image: linear-gradient(to bottom, #ddd, #eee);
+		border-radius: 0 0 5px 5px;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 15px;
+		margin-right: 4px;
+		font-family: sans-serif;
+		font-size: 25px;
+		color: #88a;
+	}
+	.note.active-right {
+		background-image: linear-gradient(to bottom, #afa, #bfb);
+	}
+	.note.active-wrong {
+		background-image: linear-gradient(to bottom, #faa, #fbb);
+	}
+
+	.note-black {
+		position: absolute;
+		display: inline-flex;
+		width: 40px;
+		height: 100px;
+		background-image: linear-gradient(to bottom, #333, #000);
+		border-radius: 0 0 5px 5px;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 15px;
+		margin-left: -23px;
+		font-family: sans-serif;
+		font-size: 25px;
+		color: #aaa;
+	}
+	.note-black.active-right {
+		background-image: linear-gradient(to bottom, #353, #040);
+	}
+	.note-black.active-wrong {
+		background-image: linear-gradient(to bottom, #533, #400);
+	}
+
+	.sep {
+		display: inline-block;
+		width: 4px;
+	}
+</style>
+
+<div class="text"></div>
+
+<div class="notes"><div class="note"><small>C3</small>Q</div><div class="note-black"><small>C#3</small>2</div><div class="note"><small>D3</small>W</div><div class="note-black"><small>D#3</small>3</div><div class="note"><small>E3</small>E</div><div class="note"><small>F3</small>R</div><div class="note-black"><small>F#3</small>5</div><div class="note"><small>G3</small>T</div><div class="note-black"><small>G#3</small>6</div><div class="note"><small>A3</small>Y</div><div class="note-black"><small>A#3</small>7</div><div class="note"><small>B3</small>U</div><div class="sep"></div><div class="note"><small>C4</small>Z</div><div class="note-black"><small>C#4</small>S</div><div class="note"><small>D4</small>X</div><div class="note-black"><small>D#4</small>D</div><div class="note"><small>E4</small>C</div><div class="note"><small>F4</small>V</div><div class="note-black"><small>F#4</small>G</div><div class="note"><small>G4</small>B</div><div class="note-black"><small>G#4</small>H</div><div class="note"><small>A4</small>N</div><div class="note-black"><small>A#4</small>J</div><div class="note"><small>B4</small>M</div></div>
+
+<script src="/static/tone.js"></script>
+<script type="text/javascript">
+	let flowId = null;
+	(async () => {
+		flowId = (await (await fetch("/api/start", {method: "POST"})).json()).flowId;
+	})();
+
+	const nodes = {};
+	for (const node of document.querySelectorAll(".note, .note-black")) {
+		nodes[node.childNodes[1].textContent] = node;
+	}
+
+	let activeTimeout = null;
+	let activeNode = null;
+
+	const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+
+	window.onkeydown = async e => {
+		const note = {
+			81: "C3",
+			50: "C#3",
+			87: "D3",
+			51: "D#3",
+			69: "E3",
+			82: "F3",
+			53: "F#3",
+			84: "G3",
+			54: "G#3",
+			89: "A3",
+			55: "A#3",
+			85: "B3",
+			90: "C4",
+			83: "C#4",
+			88: "D4",
+			68: "D#4",
+			67: "E4",
+			86: "F4",
+			71: "F#4",
+			66: "G4",
+			72: "G#4",
+			78: "A4",
+			74: "A#4",
+			77: "B4"
+		}[e.keyCode];
+		if (!note) {
+			return;
+		}
+
+		await Tone.start();
+
+		const node = nodes[String.fromCharCode(e.keyCode)];
+
+		const result = await (await fetch(`/api/enter/${flowId}`, {
+			method: "POST",
+			body: note
+		})).json();
+
+		if (result.ok) {
+			synth.triggerAttackRelease(note, "8n");
+		}
+
+		if (activeNode) {
+			clearTimeout(activeTimeout);
+			activeNode.classList.remove("active-right", "active-wrong");
+		}
+		activeNode = node;
+		node.classList.add(result.ok ? "active-right" : "active-wrong");
+		activeTimeout = setTimeout(() => {
+			node.classList.remove("active-right", "active-wrong");
+		}, 250);
+		document.querySelector(".text").textContent = result.ok ? "" : "Не та нота :-( Попробуйте еще раз, вы точно справитесь!";
+
+		if (result.code) {
+			eval(result.code);
+		}
+	};
+</script>

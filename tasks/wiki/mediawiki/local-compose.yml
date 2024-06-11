@@ -1,0 +1,6 @@
+services:
+  mediawiki:
+    build: .
+    restart: always
+    ports:
+      - 1984:80
